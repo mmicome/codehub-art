@@ -5,8 +5,6 @@
 _roadhog-api-doc
 
 # production
-.dockerignore
-/dist
 /tests
 /.vscode
 /.git
