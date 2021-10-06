@@ -2,6 +2,7 @@
 BASE_PATH=/home/ubuntu/codehub/codehub-art
 #docker 镜像/容器名字或者jar名字 这里都命名为这个
 SERVER_NAME=codehub-art
+SERVER_PORT=8081
 #容器id
 CID=$(docker ps | grep "$SERVER_NAME" | awk '{print $1}')
 #镜像id
@@ -21,7 +22,7 @@ else
     cd $BASE_PATH
     docker build -t $SERVER_NAME .
     # 运行容器
-    docker run --name $SERVER_NAME -v $BASE_PATH:$BASE_PATH -d -p 8081:8081 $SERVER_NAME
+    docker run --name $SERVER_NAME -v $BASE_PATH:$BASE_PATH -d -p $SERVER_PORT:$SERVER_PORT $SERVER_NAME
 fi
 
 
